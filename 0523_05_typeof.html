@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="info">123</p>
+        <script>
+            function apple() {
+                return false;
+            }
+            console.log(typeof(12));
+            console.log(typeof 0.12);
+            console.log(typeof(true));
+            console.log(typeof false);
+            console.log(typeof undefined);
+            console.log(typeof null); // object
+            console.log(typeof "abc");
+            console.log(typeof alert);
+            console.log(typeof apple);
+            console.log(typeof info);//id 偷懶可以直接拿來用 盡量還是getElementById來取得
+            console.log(info.constructor.name); // ES6 取得類型名稱
+        </script>
+    </body>
+</html>
