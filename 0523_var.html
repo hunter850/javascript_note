@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 10;
+        console.log("a: ", a);
+        console.log("window.a: ", window.a);
+
+        var alert = 5;
+        console.log("alert: ", alert);
+        // window.alert("apple"); 因為var讓alert = 5蓋掉了window的alert屬性 所以window.alert();無法運作 但window.alert的值是5仍會正常
+        console.log("window.alert: ", window.alert);
+
+        let b = 8;
+        console.log("b: ", b);
+        //let不會影響window的屬性
+        console.log("window.b: ", window.b);
+
+        // let confirm = 9;
+        // console.log("confirm:", confirm);
+        // console.log("window.confirm:", window.confirm);
+        // window.confirm("apple");
+
+        //不要重複宣告變數
+    </script>
+</body>
+</html>
