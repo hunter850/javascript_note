@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!--
+            tag 標籤
+            element 元素
+            node 節點
+
+        -->
+        <div id="info1" class="nnn">123</div>
+        <div id="info2" class="nnn">
+            <p>456</p>
+        </div>
+        <div id="info3" class="nnn">789</div>
+
+        <div id="info1">ABC</div>
+
+        <script>
+            let a2 = document.getElementById("info2");
+            let a3 = document.querySelector("#info3");
+            const nnn = document.querySelectorAll(".nnn");
+
+            console.log(a2.innerHTML);
+        </script>
+    </body>
+</html>
