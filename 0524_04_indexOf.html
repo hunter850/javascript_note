@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="info"></p>
+        <script>
+            const pEl = document.querySelector("#info");
+
+            let str =
+                "今天在大聯盟場上太空人以3：2險勝遊騎兵今天在大聯盟場上太空人以3：2險勝遊騎兵";
+            console.log("length:", str.length);
+            console.log("大聯盟:", str.indexOf("大聯盟"));
+            console.log("小聯盟:", str.indexOf("小聯盟"));
+            console.log("今天:", str.indexOf("今天"));
+            console.log("-----------------------");
+
+            console.log("大聯盟:", str.lastIndexOf("大聯盟"));
+            console.log("小聯盟:", str.lastIndexOf("小聯盟"));
+            console.log("今天:", str.lastIndexOf("今天"));
+            console.log("-----------------------");
+            console.log("大聯盟:", str.indexOf("大聯盟", 19));
+            console.log("小聯盟:", str.indexOf("小聯盟", 19));
+            console.log("今天:", str.indexOf("今天", 19));
+            console.log("-----------------------");
+            console.log("大聯盟:", str.includes("大聯盟"));
+            console.log("小聯盟:", str.includes("小聯盟"));
+            console.log("今天:", str.includes("今天"));
+        </script>
+    </body>
+</html>
