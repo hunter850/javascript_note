@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="rect"></div>
+        <script>
+            const rect = document.querySelector(".rect");
+            const obj = {};
+            const str = "gender";
+            const p1 = {
+                age: 25,
+                name: {
+                    first: "David",
+                    last: "Wick"
+                },
+                [str]: "male" //中括號可將變數值當作為字串
+            };
+            const p2 = {...p1} //潛層複製
+            p2.gender = "female";
+            p2.name.last = "Jhon";
+        </script>
+    </body>
+</html>
