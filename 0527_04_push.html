@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre class="rect"></pre> 
+
+        <script>
+            const rect = document.querySelector(".rect");
+            const p1 = [2, "cat", 5, "apple", 12, 18];
+
+            p1.push("zzz", "aaa");
+            console.log(p1);
+
+            console.log("-----------------------------------");
+            
+            b = p1.pop();
+            console.log(b)
+            console.log(p1)
+
+            console.log("-----------------------------------");
+            
+            c = p1.shift();
+            console.log(c)
+            console.log(p1)
+            
+            console.log("-----------------------------------");
+            
+            p1.unshift("apple")
+            console.log(p1)
+            </script>
+    </body>
+</html>
