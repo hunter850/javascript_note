@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- pre標籤的innerHTML有多少空白都會保留 -->
+        <pre class="rect"></pre> 
+        <script>
+            const rect = document.querySelector(".rect");
+            const p1 = {
+                age: 25,
+                name: {
+                    first: "Jhon",
+                    last: "Wick"
+                },
+                id: "007",
+            };
+            const p2 = JSON.parse(JSON.stringify(p1)); //靠JSON轉換達到深層複製
+
+            p1.name.first = "Alex";
+
+            rect.innerHTML += JSON.stringify(p1, null, 4) + "\n" + JSON.stringify(p2, null, 4);
+        </script>
+    </body>
+</html>
