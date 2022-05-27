@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre class="rect"></pre> 
+        <p>123</p>
+        <p>456</p>
+        <p>789</p>
+        <p>000</p>
+        <script>
+            const rect = document.querySelector(".rect");
+            const p1 = document.querySelectorAll("p");
+
+            console.log(p1);
+
+            const p2 = [...p1]; //淺層複製 且可將Nodelist轉為Array
+            p2.pop();
+            console.log(p2);
+
+
+            const p3 = p2.concat(); //淺層複製
+            const p4 = p2.slice(); //淺層複製
+
+            const p5 = JSON.parse(JSON.stringify(p2)); //深層複製
+        </script>
+    </body>
+</html>
