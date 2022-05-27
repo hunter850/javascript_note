@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre class="rect"></pre> 
+        <p>123</p>
+        <p>456</p>
+        <p>789</p>
+        <script>
+            const rect = document.querySelector(".rect");
+            const p1 = [2, "cat", 5, "apple", 12, 18];
+            const myDOM = document.querySelectorAll("p");
+
+            p1[10] = "orange";
+            p1[9] = null;
+            p1[9] = undefined;
+            console.log(typeof p1[9]);
+
+            for (let i = 0; i < p1.length; i++) {
+                console.log(`${i}: ${p1[i]}`);
+            }
+            console.log("---------------------------------")
+            for (let i in p1) {
+                console.log(`${i}: ${p1[i]}`);
+            }
+            console.log("---------------------------------")
+            for (let i of p1) {
+                console.log(i);
+            }
+            console.log("---------------------------------")
+            for (let i of myDOM) {
+                console.log(i,i.innerHTML);
+            }
+        </script>
+    </body>
+</html>
