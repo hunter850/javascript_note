@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            pre {
+                font-size: 36px;
+            }
+        </style>
+    </head>
+    <body>
+        <pre class="rect"></pre> 
+
+        <script>
+            const rect = document.querySelector(".rect");
+            const p1 = [2, 13, 5, 75, 12, 36];
+            const p2 = "3例死亡個案年齡則介於50多歲到70多歲".split("");
+
+            p1.sort();
+            console.log(p1); //預設以字串排序
+            rect.innerText += JSON.stringify(p1, null, 4)
+            
+            p2.sort();
+            console.log(p2); //預設以unicode編碼來排序
+            
+            rect.innerText += "\n" + "\n" + JSON.stringify(p2, null, 4)
+            
+        </script>
+    </body>
+</html>
