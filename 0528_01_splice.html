@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            pre {
+                font-size: 36px;
+            }
+        </style>
+    </head>
+    <body>
+        <pre class="rect"></pre> 
+
+        <script>
+            const rect = document.querySelector(".rect");
+            const ar = "abcdefg".split("");
+
+            let br = [...ar];
+            rect.innerHTML += JSON.stringify(br.splice(2, 2)) + "\n"; //刪除
+            rect.innerHTML += JSON.stringify(br) + "\n";
+            
+            br = [...ar];
+            rect.innerHTML += JSON.stringify(br.splice(2, 0, "apple")) + "\n"; //插入
+            rect.innerHTML += JSON.stringify(br) + "\n";
+            
+            br = [...ar];
+            rect.innerHTML += JSON.stringify(br.splice(2, 2, "apple", "Jhon")) + "\n"; //取代
+            rect.innerHTML += JSON.stringify(br) + "\n";
+            </script>
+    </body>
+</html>
