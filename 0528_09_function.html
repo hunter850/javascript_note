@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre class="rect"></pre>
+
+        <script>
+            const rect = document.querySelector(".rect");
+            const ar = [2, 7, 34, 17, 19, 23, 84];
+            let a = 10, b = 5;
+
+            //funciton內的變數不會改變function外的變數
+            function swap(a, b) {
+                let temp;
+                temp = a;
+                a = b;
+                b = temp;
+            }
+            
+            function take() {
+                ar.pop();
+            }
+
+            function arryPop(ar) {
+                ar = [...ar];
+                ar.pop();
+                return ar;
+            }
+
+            // swap(a, b);
+            // console.log(a, b);
+            
+            // take();
+            // console.log(ar);
+
+            const apple = arryPop(ar);
+            console.log(apple, ar);
+
+        </script>
+    </body>
+</html>
