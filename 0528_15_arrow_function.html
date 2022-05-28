@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button onclick="history.go(0);">重置</button>
+        <pre class="rect"></pre>
+        <select name="" id="mysort" onchange="whenChanged()">
+            <option value="">-- 請選擇 --</option>
+            <option value="ageAsc">年齡小到大</option>
+            <option value="ageDesc">年齡大到小</option>
+            <option value="nameAsc">名字小到大</option>
+            <option value="nameDesc">名字大到小</option>
+        </select>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>姓名</td>
+                    <td>年齡</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <script>
+            const rect = document.querySelector(".rect");
+            const ar = [
+                { name: "David", age: 25 },
+                { name: "Carl", age: 28 },
+                { name: "Alex", age: 12 },
+                { name: "Frank", age: 21 },
+                { name: "Nick", age: 18 },
+                { name: "Elsa", age: 16 },
+                { name: "Ted", age: 33 },
+                { name: "Bill", age: 60 },
+            ];
+            // 依年齡排序
+            function ageAsc(a, b) {
+                return a.age - b.age;
+            }
+            function ageDesc(a, b) {
+                return b.age - a.age;
+            }
+            // 依名字排序
+            function nameAsc(a, b) {
+                return a.name < b.name ? -1 : 1;
+            }
+            function nameDesc(a, b) {
+                return a.name > b.name ? -1 : 1;
+            }
+
+            function whenChanged() {
+                const mysort = document.querySelector("#mysort");
+                ar.sort(window[mysort.value]); //function會自動成為window下的物件
+                // rect.innerHTML = JSON.stringify(ar, null, 4); //改用render渲染
+                render();
+            }
+            
+            function render() {
+                document.querySelector("tbody").innerHTML = ar.map(value => `
+                    <tr>
+                        <td>${value.name}</td>
+                        <td>${value.age}</td>
+                    </tr>
+                `
+                ).join("");
+            }
+            render();
+        </script>
+    </body>
+</html>
