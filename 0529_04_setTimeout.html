@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .rect {
+            width: 800px;
+            height: 600px;
+            border: 1px solid black;
+            background-color: #ffa;
+            position: relative;
+        }
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+            background-color: rgb(255, 86, 86);
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rect">
+        <div class="circle"></div>
+        <div class="circle" style="top: 100px;background-color:rgb(109, 252, 90)"></div>
+        <div class="circle" style="top: 200px;background-color:rgb(90, 128, 252)"></div>
+    </div>
+    
+    <script>
+        const rect = document.querySelector(".rect");
+        const ball = document.querySelectorAll(".circle");
+
+        ball.forEach(b => {
+            b.style.left = "0px";
+        })
+        function doRun() {
+            const lefts = [];
+            ball.forEach((b) => {
+                lefts.push(parseInt(b.style.left));
+            });
+            const max = Math.max(...lefts);
+            if (max < 750) {
+                setTimeout(doRun, 30);
+            }
+
+            ball.forEach((b) => {
+                let left =
+                    parseInt(b.style.left) +
+                    1 +
+                    Math.floor(Math.random() * 5) +
+                    "px";
+                b.style.left = left;
+            });
+        }
+        doRun();
+    </script>
+
+</body>
+
+</html>
