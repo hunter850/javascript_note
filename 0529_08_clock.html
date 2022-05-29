@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .clock {
+                position: relative;
+                width: 600px;
+                height: 600px;
+                border-radius: 50%;
+                background-color: rgb(248, 232, 232);
+                border: 1px solid black;
+                margin: auto;
+            }
+            .hand_sec {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+            }
+            .sec {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgb(52, 87, 245);
+            }
+            .hand_min {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+            }
+            .min {
+                position: absolute;
+                width: 2px;
+                height: 240px;
+                left: -1px;
+                top: -240px;
+                background-color: rgb(0, 0, 0);
+            }
+            .hand_hour {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+            }
+            .hour {
+                position: absolute;
+                width: 2px;
+                height: 150px;
+                left: -1px;
+                top: -150px;
+                background-color: rgb(245, 52, 52);
+            }
+            .hand_12 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(0deg);
+            }
+            .hour12 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -18px;
+                font-size: 36px;
+            }
+            .hand_1 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(30deg);
+            }
+            .hour1 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -9px;
+                font-size: 36px;
+            }
+            .hour1 span {
+                display: block;
+                transform: rotate(330deg);
+            }
+            .hand_2 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(60deg);
+            }
+            .hour2 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -9px;
+                font-size: 36px;
+            }
+            .hour2 span {
+                display: block;
+                transform: rotate(300deg);
+            }
+            .hand_3 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(90deg);
+            }
+            .hour3 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -9px;
+                font-size: 36px;
+            }
+            .hour3 span {
+                display: block;
+                transform: rotate(270deg);
+            }
+            .hand_4 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(120deg);
+            }
+            .hour4 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -9px;
+                font-size: 36px;
+            }
+            .hour4 span {
+                display: block;
+                transform: rotate(240deg);
+            }
+            .hand_5 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(150deg);
+            }
+            .hour5 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -9px;
+                font-size: 36px;
+            }
+            .hour5 span {
+                display: block;
+                transform: rotate(210deg);
+            }
+            .hand_6 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(180deg);
+            }
+            .hour6 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -9px;
+                font-size: 36px;
+            }
+            .hour6 span {
+                display: block;
+                transform: rotate(180deg);
+            }
+            .hand_7 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(210deg);
+            }
+            .hour7 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -9px;
+                font-size: 36px;
+            }
+            .hour7 span {
+                display: block;
+                transform: rotate(150deg);
+            }
+            .hand_8 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(240deg);
+            }
+            .hour8 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -9px;
+                font-size: 36px;
+            }
+            .hour8 span {
+                display: block;
+                transform: rotate(120deg);
+            }
+            .hand_9 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(270deg);
+            }
+            .hour9 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -9px;
+                font-size: 36px;
+            }
+            .hour9 span {
+                display: block;
+                transform: rotate(90deg);
+            }
+            .hand_10 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(300deg);
+            }
+            .hour10 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -18px;
+                font-size: 36px;
+            }
+            .hour10 span {
+                display: block;
+                transform: rotate(60deg);
+            }
+            .hand_11 {
+                position: absolute;
+                left: 300px;
+                top: 300px;
+                transform: rotate(330deg);
+            }
+            .hour11 {
+                position: absolute;
+                width: 2px;
+                height: 300px;
+                left: -1px;
+                top: -300px;
+                background-color: rgba(245, 52, 52, 0);
+                text-indent: -18px;
+                font-size: 36px;
+            }
+            .hour11 span {
+                display: block;
+                transform: rotate(30deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="clock">
+            <div class="hand_sec">
+                <div class="sec"></div>
+            </div>
+            <div class="hand_min">
+                <div class="min"></div>
+            </div>
+            <div class="hand_hour">
+                <div class="hour"></div>
+            </div>
+            <div class="hand_12">
+                <div class="hour12"><span>12</span></div>
+            </div>
+            <div class="hand_1">
+                <div class="hour1"><span>1</span></div>
+            </div>
+            <div class="hand_2">
+                <div class="hour2"><span>2</span></div>
+            </div>
+            <div class="hand_3">
+                <div class="hour3"><span>3</span></div>
+            </div>
+            <div class="hand_4">
+                <div class="hour4"><span>4</span></div>
+            </div>
+            <div class="hand_5">
+                <div class="hour5"><span>5</span></div>
+            </div>
+            <div class="hand_6">
+                <div class="hour6"><span>6</span></div>
+            </div>
+            <div class="hand_7">
+                <div class="hour7"><span>7</span></div>
+            </div>
+            <div class="hand_8">
+                <div class="hour8"><span>8</span></div>
+            </div>
+            <div class="hand_9">
+                <div class="hour9"><span>9</span></div>
+            </div>
+            <div class="hand_10">
+                <div class="hour10"><span>10</span></div>
+            </div>
+            <div class="hand_11">
+                <div class="hour11"><span>11</span></div>
+            </div>
+        </div>
+
+        <script>
+            const hand_sec = document.querySelector(".hand_sec");
+            const hand_min = document.querySelector(".hand_min");
+            const hand_hour = document.querySelector(".hand_hour");
+            
+
+            function clock() {
+                let now = new Date();
+                let second = now.getSeconds() * 6;
+                let min = now.getMinutes() * 6 + 6 * (now.getSeconds() * 6 / 360);
+                let hour = (now.getHours() % 12) * 30 + 30 * (min / 360);
+
+                hand_sec.style.transform = `rotate(${second}deg)`
+                hand_min.style.transform = `rotate(${min}deg)`
+                hand_hour.style.transform = `rotate(${hour}deg)`
+
+                setTimeout(clock, 1000);
+            }
+            clock();
+        </script>
+    </body>
+</html>
