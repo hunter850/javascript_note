@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="showCallBack()">click</button>
+    <script>
+        var appel = 1;
+        const banana = 2;
+        let cat = 3;
+        function doStep1(result, f) {
+            setTimeout(() => {
+                result += 1;
+                f(result);
+            },1000);
+        }
+        function doStep2(result, f) {
+            setTimeout(() => {
+                result += 2;
+                f(result);
+            },1000);
+        }
+        function doStep3(result, f) {
+            setTimeout(() => {
+                result += 3;
+                f(result);
+            },1000);
+        }
+        function showCallBack() {
+            doStep1(0, (result1) => {
+                console.log(result1);
+                doStep2(result1, (result2) => {
+                    console.log(result2);
+                    doStep3(result2, (result3) => {
+                        console.log(result3);
+                        console.log("finished");
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
