@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <pre class="rect"></pre>
+
+        <script>
+            const rect = document.querySelector(".rect");
+
+            const now = new Date();
+            const deadline1 = new Date("2022-8-24");
+            const deadline2 = new Date(2022, 7, 24);
+            const deadline3 = new Date(2022, 7, 24, 10, 0, 0);
+
+            let diff = deadline1 - now;
+            console.log(diff);
+            let day = parseInt(diff/(24 * 60 * 60000));
+            rect.innerHTML = `<h2>距離結訓還有 ${day} 天</h2>`
+        </script>
+    </body>
+</html>
